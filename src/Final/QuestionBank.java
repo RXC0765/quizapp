@@ -1,6 +1,5 @@
 package Final;
-import java.util.*;
-
+import java.util.*; 
 
 import java.io.BufferedReader;
 import java.io.File;
@@ -63,6 +62,7 @@ public class QuestionBank {
 			score++;
 			readOneQuestion();   //raise a new question
 		}
+		sc.close();
 	}			
 	
 }
