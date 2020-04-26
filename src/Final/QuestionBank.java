@@ -5,6 +5,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.IOException;
 
 public class QuestionBank {
 	File fTest;      //file
@@ -13,7 +14,7 @@ public class QuestionBank {
 	String correctAnswer;
 	int score=0;
 	
-	public void openTestFile(File f){
+	public void openTestFile(File f) throws IOException{
 		fTest=f;
 		try {			
 			frInput=new FileReader(fTest);   //create a file reader
@@ -25,6 +26,7 @@ public class QuestionBank {
 		}  catch (Exception e) {
 			System.out.println("question not found");
 		}
+		
 	}
 	
 	//read one question
@@ -61,8 +63,9 @@ public class QuestionBank {
 		if(bOne) {        //if player input the correct answer
 			score++;
 			readOneQuestion();   //raise a new question
+		}else {
+			readOneQuestion(); 
 		}
-		sc.close();
 	}			
 	
 }

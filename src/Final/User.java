@@ -14,5 +14,19 @@ public class User {
     	this.CollectionOfMistakes = new ArrayList<String>();
     }
     
+    public void ChangeScore(int score) {
+    	this.score = score;
+    }
     
+    public String getName() {
+    	return name;
+    }
+    
+    public int getScore() {
+    	return score;
+    }
+    
+    public void printUser() {
+    	System.out.println("User name: "+ name+" Score: "+score);
+    }
 }
