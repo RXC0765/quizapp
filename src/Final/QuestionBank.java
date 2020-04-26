@@ -44,7 +44,7 @@ public class QuestionBank {
 					break;
 				}
 			}
-			if(s==null) {   
+			if(s==null) {
 				brInput.close();   //close buffered reader
 				System.out.println("game ended");
 				System.out.println("Your score:"+score);
