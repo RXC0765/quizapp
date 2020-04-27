@@ -1,11 +1,11 @@
 package Final;
-import java.util.*; 
+import java.util.*;
+
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.io.IOException;
 
 public class QuestionBank {
 	File fTest;      //file
@@ -14,7 +14,7 @@ public class QuestionBank {
 	String correctAnswer;
 	int score=0;
 	
-	public void openTestFile(File f) throws IOException{
+	public void openTestFile(File f){
 		fTest=f;
 		try {			
 			frInput=new FileReader(fTest);   //create a file reader
@@ -26,7 +26,6 @@ public class QuestionBank {
 		}  catch (Exception e) {
 			System.out.println("question not found");
 		}
-		
 	}
 	
 	//read one question
@@ -44,12 +43,13 @@ public class QuestionBank {
 					break;
 				}
 			}
-			if(s==null) {
-				brInput.close();   //close buffered reader
+			if(s==null) {   
+				//brInput.close();   //close buffered reader
 				System.out.println("game ended");
 				System.out.println("Your score:"+score);
+			}else {
+				getanswer();
 			}
-			getanswer();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -64,7 +64,7 @@ public class QuestionBank {
 			score++;
 			readOneQuestion();   //raise a new question
 		}else {
-			readOneQuestion(); 
+			readOneQuestion();   //raise a new question
 		}
 	}			
 	
