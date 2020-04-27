@@ -19,8 +19,8 @@ public class StudyMode {
 				question = line;    
 			}	
 			else {    
-				line = line.replace("-","");   //pick out the answer
-				trueAnswer = line;    //update the right answer
+				line = line.replace("-","");//pick out the answer
+				trueAnswer = line.trim();    //update the right answer
 			}
    		    exercise.put(question, trueAnswer);
     	}
