@@ -7,11 +7,11 @@ import java.util.*;
 public class Answer {
 	ArrayList<User> users;
 	
-	public Answer() {
+	public Answer() { //constructor
 		users = new ArrayList<User>();
 	}
 	
-	public void PrintResult() {
+	public void PrintResult() { //print the list of users
 		for(int i=0; i<users.size();i++) {
 			System.out.println(users.get(i).toString());
 		}
@@ -35,23 +35,23 @@ public class Answer {
 			    	System.out.println("Please enter your name:");
 			    	String name = input.nextLine();
 			        
-			        User user = new User(name);
-			        answer.users.add(user); 
+			        User user = new User(name); //create a user class which includes name and score
+			        answer.users.add(user); //add the user to the array list
 			        
 			        System.out.println("Hello "+name+" ! Let's get started!");
 			        System.out.println("Before the quiz, let's spend some time going over these words!");			        
 			        
 			        
-			        while(true) {
+			        while(true) { //like some vocabulary trainer apps, the user should go over the words before the test
 			            System.out.println("Please choose your study mode: Spell(0) or Match(1)");
-			            int mode = input.nextInt();
+			            int mode = input.nextInt(); //we designed two study modes
 			            if(mode==0) {
-			            	Spell spell = new Spell(new File("StudyMode.txt"));
+			            	Spell spell = new Spell(new File("StudyMode.txt")); //the first one is spell
 			            	spell.beginExerciseSpell();
 			        	    break;
 			            }else if(mode==1) {
-			            	//Match match = new Match(new File("StudyMode.txt"));
-			            	//match.beginExerciseMatch();
+			            	Match match = new Match(new File("StudyMode.txt")); //the second one is match
+			            	match.beginExerciseMatch();
 			        	    break;
 			            }else {
 			        	    System.out.println("Please enter 0 or 1.");
@@ -61,10 +61,10 @@ public class Answer {
 			        
 			        System.out.println("Now let's take a quiz and see how much you have learnt!");
 			        QuestionBank qb=new QuestionBank();
-			        qb.openTestFile(new File("test.txt"));   //open the file error
+			        qb.openTestFile(new File("test.txt"));   //open the file 
 			        user.ChangeScore(qb.score); 
 			        
-			        System.out.println("Is there another player? (1/0)");
+			        System.out.println("Is there another player? (1/0)"); //multiple users can use this app
 			        newplayer = input.nextInt();
 			        input.nextLine();
 			        
@@ -72,7 +72,7 @@ public class Answer {
 			        	System.out.println("Do you want to see everyone's results? (Y/N)");
 			        	String see = input.nextLine();
 			        	if(see.compareToIgnoreCase("Y")==0) {
-			        		answer.PrintResult();
+			        		answer.PrintResult(); //use the print result method to print every user's score
 			        		break;
 			        	}else {
 			        		System.out.println("Bye");

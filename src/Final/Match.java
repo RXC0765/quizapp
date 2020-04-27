@@ -5,7 +5,7 @@ import java.io.File;
 import java.io.FileNotFoundException; 
 
 public class Match extends StudyMode{
-    public Match(File f) throws FileNotFoundException {
+    public Match(File f) throws FileNotFoundException { //constructor 
     	super(f);
     }
     
@@ -19,7 +19,7 @@ public class Match extends StudyMode{
     		for(String question: questionSet) {
     			
     		}
-    		input.close();
+ 
      }
     
 }
