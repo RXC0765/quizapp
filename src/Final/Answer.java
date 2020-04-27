@@ -21,12 +21,13 @@ public class Answer {
 		System.out.println("Welcome to the Quiz App!");
 		System.out.println("You bring the brains, we'll bring everything else!");
 		
+		Scanner input = new Scanner(System.in);
 		Answer answer = new Answer();
 		String start = "";
 		int newplayer=1;
+		
         while(true) {
 		    System.out.println("Do you want to start you vocabulary learning journey? (Y/N)");
-		    Scanner input = new Scanner(System.in);
 		    start = input.nextLine();
 		    
 		    if(start.compareToIgnoreCase("Y")==0) {
@@ -39,6 +40,7 @@ public class Answer {
 			        
 			        System.out.println("Hello "+name+" ! Let's get started!");
 			        System.out.println("Before the quiz, let's spend some time going over these words!");			        
+			        
 			        
 			        while(true) {
 			            System.out.println("Please choose your study mode: Spell(0) or Match(1)");
@@ -56,13 +58,15 @@ public class Answer {
 			            }
 			        }
 			        
+			        
 			        System.out.println("Now let's take a quiz and see how much you have learnt!");
 			        QuestionBank qb=new QuestionBank();
 			        qb.openTestFile(new File("test.txt"));   //open the file error
 			        user.ChangeScore(qb.score); 
 			        
 			        System.out.println("Is there another player? (1/0)");
-			        newplayer = input.nextInt(); 
+			        newplayer = input.nextInt();
+			        input.nextLine();
 			        
 			        if(newplayer==0) {
 			        	System.out.println("Do you want to see everyone's results? (Y/N)");
@@ -74,8 +78,9 @@ public class Answer {
 			        		System.out.println("Bye");
 			        	    break;
 			        	}
-			        }		        	
+			        }
 		    	}
+		    	break;
 		    }else if(start.compareToIgnoreCase("N")==0) {
 		    	System.out.println("Bye!");
 		    	break;

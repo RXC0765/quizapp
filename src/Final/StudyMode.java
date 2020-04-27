@@ -10,11 +10,11 @@ public class StudyMode {
     
     public StudyMode(File f) throws FileNotFoundException {
     	exercise = new HashMap<String, String>();
-    	Scanner input = new Scanner(f);
+    	Scanner fileread = new Scanner(f);
     	String question = "";
     	String trueAnswer = "";
-    	while(input.hasNextLine()) {
-    		String line = input.nextLine();
+    	while(fileread.hasNextLine()) {
+    		String line = fileread.nextLine();
     		if(!line.startsWith("-")) {   //if it's a question
 				question = line;    
 			}	
@@ -24,7 +24,6 @@ public class StudyMode {
 			}
    		    exercise.put(question, trueAnswer);
     	}
-    	input.close();
     }
     
      

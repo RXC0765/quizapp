@@ -29,7 +29,6 @@ public class Spell extends StudyMode {
 				System.out.println();
 			}
 		}
-		input.close();
 	}
 	
 }
