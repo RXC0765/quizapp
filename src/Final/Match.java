@@ -51,3 +51,50 @@ public class Match extends AbstractStudyMode implements CanPlay {
 			i += NUM_PER_RUN;
 		}
      }
+
+	private void printResult(List<String> partitionQuestionList, List<String> correctAnswer, List<Integer> userAnswerList) {
+		String answerFormat = "%-50s" + "%20s" + "%20s";
+		System.out.printf(answerFormat, "Question", "Your Answer","Correct Answer");
+		System.out.println();
+		for(int j = 0; j < partitionQuestionList.size(); j++){
+			String q = partitionQuestionList.get(j);
+			System.out.printf(answerFormat, q, userAnswerList.get(j), correctAnswer.indexOf(getAnswer(q)) + 1);
+			System.out.println();
+		}
+		System.out.println();
+	}
+
+	private List<Integer> takeAnswers(Scanner input, List<String> partitionQuestionList) {
+		List<Integer> userAnswerList = new ArrayList<>();
+		System.out.println("*******Please type the number you think is a match*******");
+		for(int j = 0; j < partitionQuestionList.size(); j++){
+			System.out.print(partitionQuestionList.get(j) + ": ");
+			int answer = input.nextInt();
+			userAnswerList.add(answer);
+		}
+		return userAnswerList;
+	}
+
+	private void printMatching(List<String> partitionQuestionList, List<String> shuffleAnswerList) {
+    	String matchFormat = "%-50s" + "%-20s";
+    	System.out.printf(matchFormat, "From", "To");
+    	System.out.println();
+
+		for(int j = 0; j < partitionQuestionList.size(); j++){
+			String question = partitionQuestionList.get(j);
+			System.out.printf(matchFormat, question,  (j + 1) + ": " + shuffleAnswerList.get(j));
+			System.out.println();
+		}
+	}
+
+	private List<String> getAnswerList(List<String> questionList){
+    	List<String> answerList = new ArrayList<>();
+    	for(String q : questionList){
+    		answerList.add(getAnswer(q));
+		}
+    	return answerList;
+	 }
+
+
+}
+
