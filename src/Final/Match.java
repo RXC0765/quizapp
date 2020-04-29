@@ -3,7 +3,9 @@ package Final;
 import java.util.*;
 import java.io.File;
 import java.io.FileNotFoundException; 
-
+/**
+*@author Shiyi(Wendy) Mao
+*/
 public class Match extends AbstractStudyMode implements CanPlay {
 	// The number of question per run.
 	static int NUM_PER_RUN = 5;
