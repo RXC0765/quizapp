@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.util.*;
 
 /**
-*@author Shiyi(Wendy) Mao
+*@author Shiyi(Wendy) Mao Yinghan(Alisa) Lin
 */
 public class Answer {
 	ArrayList<User> users;
