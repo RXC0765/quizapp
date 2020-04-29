@@ -42,7 +42,7 @@ public class Answer {
 			        System.out.println("Before the quiz, let's spend some time going over these words!");
 
 
-					CanPlay play = null;
+					CanPlay play = null; // the CanPlay instance to run the game
 					while(true) { //like some vocabulary trainer apps, the user should go over the words before the test
 			            System.out.println("Please choose your study mode: Spell(0) or Match(1)");
 			            int mode = input.nextInt(); //we designed two study modes
@@ -91,4 +91,6 @@ public class Answer {
 		}			
 	}
 }
+
+
 
