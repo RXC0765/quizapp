@@ -6,7 +6,7 @@ import java.io.FileNotFoundException;
 
 /**
  * 
- * @author Yinghan Lin
+ * @author Yinghan Lin, Shiyi(Wendy) Mao
  * This is a subclass of StudyMode.class
  */
 public class Spell extends AbstractStudyMode implements CanPlay {
