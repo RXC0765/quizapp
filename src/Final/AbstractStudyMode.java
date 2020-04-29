@@ -9,7 +9,7 @@ import java.util.Set;
 
 /**
  * This class encapsulate the basic file IO operation and support a table for questions and answers
- * @Shiyi(Wendy) Mao
+ * @author Shiyi(Wendy) Mao
  */
 
 abstract public class AbstractStudyMode {
