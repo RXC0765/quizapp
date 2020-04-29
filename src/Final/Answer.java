@@ -4,6 +4,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.*;
 
+/**
+*@author Shiyi(Wendy) Mao Yinghan(Alisa) Lin
+*/
 public class Answer {
 	ArrayList<User> users;
 	
@@ -39,24 +42,25 @@ public class Answer {
 			        answer.users.add(user); //add the user to the array list
 			        
 			        System.out.println("Hello "+name+" ! Let's get started!");
-			        System.out.println("Before the quiz, let's spend some time going over these words!");			        
-			        
-			        
-			        while(true) { //like some vocabulary trainer apps, the user should go over the words before the test
+			        System.out.println("Before the quiz, let's spend some time going over these words!");
+
+
+					CanPlay play = null; // the CanPlay instance to run the game
+					while(true) { //like some vocabulary trainer apps, the user should go over the words before the test
 			            System.out.println("Please choose your study mode: Spell(0) or Match(1)");
 			            int mode = input.nextInt(); //we designed two study modes
 			            if(mode==0) {
-			            	Spell spell = new Spell(new File("StudyMode.txt")); //the first one is spell
-			            	spell.beginExerciseSpell();
+			            	play = new Spell(new File("StudyMode.txt")); //the first one is spell
 			        	    break;
 			            }else if(mode==1) {
-			            	Match match = new Match(new File("StudyMode.txt")); //the second one is match
-			            	match.beginExerciseMatch();
-			        	    break;
+			            	play = new Match(new File("Match.txt")); //the second one is match
+							break;
 			            }else {
 			        	    System.out.println("Please enter 0 or 1.");
+			        	    continue;
 			            }
 			        }
+					play.beginExercise();
 			        
 			        
 			        System.out.println("Now let's take a quiz and see how much you have learnt!");
