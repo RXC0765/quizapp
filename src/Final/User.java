@@ -1,8 +1,12 @@
 package Final;
-
+/**
+import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.PrintWriter;
+*/
 /**
  * 
- * @author Yinghan Lin
+ * @author Yinghan Lin Irene Li
  * This class represents a user and records his/her name and score.
  */
 
@@ -30,4 +34,20 @@ public class User {
     public String toString() { //toString method
     	return "User name: "+ name+"       Score: "+score; 
     }
+    
+    /** a method to add question to existing question bank
+    public void addQuestion() throws IOException {
+		System.out.println("Enter your question:");
+		Scanner in = new Scanner(System.in);
+		String question = in.nextLine();
+		FileWriter fileWriter = new FileWriter("Test2.txt", true); //Set true for append mode
+	    PrintWriter printWriter = new PrintWriter(fileWriter);
+	    printWriter.println(question);  //New line
+	    printWriter.close();
+	    System.out.println("Enter the answer:");
+		String answer = in.nextLine();
+	    printWriter.println(answer);  //New line
+	    printWriter.close();
+	}
+    */
 }
