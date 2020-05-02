@@ -47,6 +47,20 @@ public class User {
 		String answer = in.nextLine();
 	    printWriter.println(answer);  //New line
 	    printWriter.close();
+	    }
+     //a method to create a new test file 
+     public void creatFile() throws IOException{
+		Scanner input = new Scanner(System.in);
+        System.out.print("Enter the desired name of your test file: ");
+        String fileName = input.nextLine();
+        fileName = fileName + ".txt";
+
+        File file = new File(fileName);
+        if (file.createNewFile()) {
+            System.out.println("File created.");
+        } else {
+            System.out.println("File already exists.");
+        }
 	}
     */
 }
