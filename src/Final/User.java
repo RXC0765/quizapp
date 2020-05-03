@@ -12,9 +12,10 @@ import java.util.Scanner;
 public class User {
     private String name;
     private int score;
-    StringBuffer stringBufferOfData = new StringBuffer();
+    /**StringBuffer stringBufferOfData = new StringBuffer();
     String fname = null;
     Scanner sc = new Scanner(System.in);
+    */
 	
     public User(String name) { //constructor
     	this.name = name;
