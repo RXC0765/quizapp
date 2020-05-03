@@ -65,7 +65,7 @@ public class Answer {
 			        
 			        System.out.println("Now let's take a quiz and see how much you have learnt!");
 			        QuestionBank qb=new QuestionBank();
-			        qb.openTestFile(new File("test2.txt"));   //open the file 
+			        qb.openTestFile(new File("Test2.txt"));   //open the file 
 			        user.ChangeScore(qb.score); 
 			        
 				Filecheck check = new Filecheck();
