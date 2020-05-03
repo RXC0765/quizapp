@@ -30,7 +30,7 @@ public class Match extends AbstractStudyMode implements CanPlay {
 	@Override
 	protected String processAnswer(String answer) {
 		answer = answer.replace("-","");
-		return answer.strip();
+		return answer.trim();
 	}
 
 	/**
