@@ -1,8 +1,8 @@
 package Final;
-/**
+
 import java.io.*
 import java.util.Scanner;
-*/
+
 /**
  * 
  * @author Yinghan Lin Irene Li
@@ -35,11 +35,12 @@ public class User {
     }
     
     /** a method to add question to existing question bank
-    public void addQuestion() throws IOException {
+    */
+    public void addQuestion(String file) throws IOException {
 		System.out.println("Enter your question:");
 		Scanner in = new Scanner(System.in);
 		String question = in.nextLine();
-		FileWriter fileWriter = new FileWriter("Test2.txt", true); //Set true for append mode
+		FileWriter fileWriter = new FileWriter(file + ".txt", true); //Set true for append mode
 	    PrintWriter printWriter = new PrintWriter(fileWriter);
 	    printWriter.println(question);  //New line
 	    printWriter.close();
@@ -47,20 +48,21 @@ public class User {
 		String answer = in.nextLine();
 	    printWriter.println(answer);  //New line
 	    printWriter.close();
-	    }
-     //a method to create a new test file 
+	}
+     /**a method to create a new test file 
+     */
      public void creatFile() throws IOException{
 		Scanner input = new Scanner(System.in);
         System.out.print("Enter the desired name of your test file: ");
         String fileName = input.nextLine();
-        fileName = fileName + ".txt";
 
-        File file = new File(fileName);
+        File file = new File(fileName + ".txt");
         if (file.createNewFile()) {
             System.out.println("File created.");
         } else {
             System.out.println("File already exists.");
         }
+        addQuestion(fileName);
 	}
-    */
+    
 }
