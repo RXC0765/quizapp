@@ -1,8 +1,8 @@
 package Final;
 
-import java.io.*
+/**import java.io.*
 import java.util.Scanner;
-
+*/
 /**
  * 
  * @author Yinghan Lin Irene Li
@@ -38,7 +38,7 @@ public class User {
     }
     
     /** a method to add question to existing question bank
-    */
+    
     public void addQuestion(String file) throws IOException {
 		System.out.println("Enter your question:");
 		Scanner in = new Scanner(System.in);
@@ -53,7 +53,7 @@ public class User {
 	    printWriter.close();
 	}
      /**a method to create a new test file 
-     */
+     
      public void creatFile() throws IOException{
 		Scanner input = new Scanner(System.in);
         System.out.print("Enter the desired name of your test file: ");
@@ -106,4 +106,5 @@ public class User {
         stringBufferOfData.replace(startIndex, endIndex, replacementText);//this is where the actual replacement of the text happens
         System.out.println("Here is the new edited text:\n" + stringBufferOfData); //used to debug and check the string was replaced
     }
+    */
 }
