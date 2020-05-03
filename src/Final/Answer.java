@@ -68,6 +68,18 @@ public class Answer {
 			        qb.openTestFile(new File("test.txt"));   //open the file 
 			        user.ChangeScore(qb.score); 
 			        
+				Filecheck check = new Filecheck();
+			        System.out.println("Did you find anything to edit? (Y/N)");
+			        String edit = input.nextLine();
+			        if(edit.compareToIgnoreCase("Y")==0) {
+		        		check.edit();
+		        	}
+			        System.out.println("Do you want to create your own test? (Y/N)");
+			        String newfile = input.nextLine();
+			        if(newfile.compareToIgnoreCase("Y")==0) {
+		        		check.creatFile();
+		        	}
+				
 			        System.out.println("Is there another player? (1/0)"); //multiple users can use this app
 			        newplayer = input.nextInt();
 			        input.nextLine();
