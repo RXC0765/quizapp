@@ -12,17 +12,28 @@ public class Filecheck {
     String fname = null;
     Scanner sc = new Scanner(System.in);
 	public void addQuestion(String file) throws IOException {
-		System.out.println("Enter your question:");
+	    while(true) {
+	        System.out.println("Enter your question:");
 		Scanner in = new Scanner(System.in);
 		String question = in.nextLine();
 		FileWriter fileWriter = new FileWriter(file + ".txt", true); //Set true for append mode
-	    PrintWriter printWriter = new PrintWriter(fileWriter);
-	    printWriter.println(question);  //New line
-	    printWriter.close();
-	    System.out.println("Enter the answer:");
+	        PrintWriter printWriter = new PrintWriter(fileWriter);
+	        printWriter.println(question);  //New line
+	        printWriter.close();
+	        System.out.println("Enter the answer:");
 		String answer = in.nextLine();
-	    printWriter.println(answer);  //New line
-	    printWriter.close();
+	        printWriter.println(answer);  //New line
+	        printWriter.close();
+		    
+	        System.out.println("Do you want to add another question? (y/n)");
+	        String s = in.nextLine();
+	        if(s.toLowerCase().equals("n")){
+	        	break;
+	        }else if(s.toLowerCase().equals("y")){	
+	        }else {
+	        	System.out.println("Please enter y or n!");
+	        }
+	    }
 	}
 	public void creatFile() throws IOException{
 		Scanner input = new Scanner(System.in);
