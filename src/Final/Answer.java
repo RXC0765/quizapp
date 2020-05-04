@@ -68,6 +68,7 @@ public class Answer {
 			        qb.openTestFile(new File("Test2.txt"));   //open the file 
 			        user.ChangeScore(qb.score); 
 			        
+				input.nextLine();
 				Filecheck check = new Filecheck();
 			        System.out.println("Did you find anything to edit? (Y/N)");
 			        String edit = input.nextLine();
